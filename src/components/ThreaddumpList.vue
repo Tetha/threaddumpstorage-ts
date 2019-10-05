@@ -10,7 +10,9 @@
         </thead>
         <tbody>
             <tr v-for="dump in dumps" v-bind:key="dump.id">
-                <th scope="row"> #{{dump.id}} </th>
+                <th scope="row"> 
+                    <router-link :to="{ name: 'poolAnalysis', params: { dumpId: dump.id } }"> #{{dump.id}}</router-link>
+                </th>
                 <td> {{ dump.application }} </td> 
                 <td> {{ dump.host }} </td>
                 <td> {{ dump.uploaded }} </td>
