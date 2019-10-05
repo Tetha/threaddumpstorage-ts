@@ -6,16 +6,16 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import ThreaddumpList from '@/components/ThreaddumpList.vue'
-import ThreaddumpListStore from '@/store/modules/dumps.ts'
+import ThreaddumpList from '@/components/ThreaddumpList.vue';
+import ThreaddumpListStore from '@/store/modules/dumps.ts';
 @Component({
   components: {
-    ThreaddumpList
+    ThreaddumpList,
   },
 })
 export default class Home extends Vue {
-  async created() {
-    ThreaddumpListStore.loadDumps()
+  public async created() {
+    ThreaddumpListStore.loadDumps();
   }
 }
 </script>
