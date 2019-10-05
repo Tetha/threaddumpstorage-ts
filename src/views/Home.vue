@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <ThreaddumpList></ThreaddumpList>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
+import ThreaddumpList from '@/components/ThreaddumpList.vue'
+import ThreaddumpListStore from '@/store/modules/dumps.ts'
 @Component({
   components: {
-    HelloWorld,
+    ThreaddumpList
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  async created() {
+    ThreaddumpListStore.loadDumps()
+  }
+}
 </script>
