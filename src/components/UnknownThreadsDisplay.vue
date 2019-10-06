@@ -26,3 +26,8 @@ export default class UnknownThreadView extends Vue {
     @Prop() public analysis?: ThreadPoolAnalysis;
 }
 </script>
+<style scoped="true">
+.unknownThreadDisplay {
+    border: 3px solid black;
+}
+</style>
