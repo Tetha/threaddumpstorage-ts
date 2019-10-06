@@ -1,16 +1,19 @@
 <template>
     <div class="analysishome">
-        <div v-if="poolAnalysis">
-            There are {{ poolAnalysis.UnknownThreads.length }} unknown threads.
-        </div>
+        <UnknownThreadsDisplay :analysis="poolAnalysis"></UnknownThreadsDisplay>
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import UnknownThreadsDisplay from '@/components/UnknownThreadsDisplay.vue';
 import ThreadPoolAnalysisStore from '@/store/modules/poolanalysis.ts';
 
-@Component
+@Component({
+    components: {
+        UnknownThreadsDisplay,
+    },
+})
 export default class ThreadPoolAnalysisView extends Vue {
     public get poolAnalysis() {
         return ThreadPoolAnalysisStore.pools[this.currentDumpId];

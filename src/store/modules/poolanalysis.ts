@@ -15,7 +15,7 @@ class ThreadPoolAnalysisStore extends VuexModule {
 
     @Mutation
     public storeAnalysis(data: { id: string, analysis: ThreadPoolAnalysis}) {
-        Vue.set(this.pools, data.id, data.analysis)
+        Vue.set(this.pools, data.id, data.analysis);
     }
 
     @Action({ commit: 'storeAnalysis' })

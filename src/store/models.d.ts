@@ -6,18 +6,18 @@ export interface ThreaddumpHeader {
 }
 
 export interface ThreadHeader {
-    id: string
-    name: string
-    javaId: string
-    isDaemon: boolean
-    prio: string,
-    osPrio: string,
-    tid: string,
-    nid: string,
-    nativeThreadState: string,
-    conditionAddress: string,
-    javaThreadState: string,
-    javaStateClarification: string,
+    Id: string
+    Name: string
+    JavaId: string
+    IsDaemon: boolean
+    Prio: string,
+    OsPrio: string,
+    Tid: string,
+    Nid: string,
+    NativeThreadState: string,
+    ConditionAddress: string,
+    JavaThreadState: string,
+    JavaStateClarification: string,
 }
 
 export interface ThreadPoolAnalysis {
